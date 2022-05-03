@@ -163,7 +163,7 @@ public class HelloApplication extends Application {
         Group group = new Group(label, group_point, group_rectangle, group_res);
         Scene scene = new Scene(group);
         stage.setScene(scene);
-        stage.setTitle("Практична 1");
+        stage.setTitle("Практична 2");
         stage.setWidth(540);
         stage.setHeight(380);
         stage.show();
