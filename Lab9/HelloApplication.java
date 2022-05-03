@@ -103,17 +103,17 @@ public class HelloApplication extends Application {
         t1label.setLayoutY(70);
         t1label.setFont(Font.font("Arial", FontWeight.BOLD, 20));
 
-        Text text_val = new Text("Поверх:");
+        Text text_val = new Text("Кімната:");
         text_val.setLayoutX(160);
-        text_val.setLayoutY(100);
+        text_val.setLayoutY(140);
 
         TextField tbx_a = new TextField();
         tbx_a.setLayoutX(160);
-        tbx_a.setLayoutY(110);
+        tbx_a.setLayoutY(150);
 
         Button button_task1 = new Button("Виконати");
         button_task1.setLayoutX(200);
-        button_task1.setLayoutY(180);
+        button_task1.setLayoutY(220);
         button_task1.setOnAction(event -> {
             try{
                 if(tbx_a.getText().isEmpty()) throw new Exception("Значення не введене!");
