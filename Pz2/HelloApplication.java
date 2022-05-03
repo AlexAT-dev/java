@@ -108,7 +108,7 @@ public class HelloApplication extends Application {
         tbx_res.setPrefWidth(30);
         tbx_res.setEditable(false);
 
-        Text text_res_error = new Text("Помилка:");
+        Text text_res_error = new Text("");
         text_res_error.setLayoutX(200);
         text_res_error.setLayoutY(305);
 
