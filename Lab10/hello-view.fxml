@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab10.HelloController">
+   <children>
+      <TableView fx:id="Table" layoutX="14.0" layoutY="14.0" prefHeight="388.0" prefWidth="511.0">
+        <columns>
+          <TableColumn fx:id="ColumnID" editable="false" prefWidth="34.0" text="id" />
+          <TableColumn fx:id="ColumnSurname" editable="false" prefWidth="95.0" text="surname" />
+            <TableColumn fx:id="ColumnName" editable="false" prefWidth="95.0" text="name" />
+            <TableColumn fx:id="ColumnBirthday" editable="false" prefWidth="95.0" text="birthday" />
+            <TableColumn fx:id="ColumnPhone" editable="false" prefWidth="95.0" text="phone" />
+            <TableColumn fx:id="ColumnVisited" editable="false" prefWidth="95.0" text="visited count" />
+        </columns>
+      </TableView>
+      <TabPane layoutX="534.0" layoutY="14.0" prefHeight="331.0" prefWidth="179.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Add">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="221.0">
+                     <children>
+                        <TextField fx:id="TxFldAdd_Surname" layoutX="14.0" layoutY="30.0" />
+                        <Label layoutX="14.0" layoutY="14.0" text="Surname:" />
+                        <TextField fx:id="TxFldAdd_Name" layoutX="14.0" layoutY="71.0" />
+                        <Label layoutX="14.0" layoutY="55.0" text="Name:" />
+                        <Label layoutX="14.0" layoutY="96.0" text="Birthday:" />
+                        <DatePicker fx:id="DtPckAdd_Birthday" layoutX="13.0" layoutY="113.0" prefHeight="25.0" prefWidth="148.0" />
+                        <TextField fx:id="TxFldAdd_Phone" layoutX="14.0" layoutY="154.0" />
+                        <Label layoutX="14.0" layoutY="138.0" text="Phone:" />
+                        <TextField fx:id="TxFldAdd_Visited" layoutX="14.0" layoutY="195.0" />
+                        <Label layoutX="14.0" layoutY="179.0" text="Visited count:" />
+                        <Button fx:id="AddButton" layoutX="68.0" layoutY="240.0" mnemonicParsing="false" onAction="#AddButtonAction" text="Add" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Edit">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="308.0" prefWidth="221.0">
+                     <children>
+                        <TextField fx:id="TxFldEdit_Surname" layoutX="15.0" layoutY="64.0" />
+                        <Label layoutX="15.0" layoutY="48.0" text="Surname:" />
+                        <TextField fx:id="TxFldEdit_Name" layoutX="15.0" layoutY="105.0" />
+                        <Label layoutX="15.0" layoutY="89.0" text="Name:" />
+                        <Label layoutX="15.0" layoutY="130.0" text="Birthday:" />
+                        <DatePicker fx:id="DtPckEdit_Birthday" layoutX="14.0" layoutY="147.0" prefHeight="25.0" prefWidth="148.0" />
+                        <TextField fx:id="TxFldEdit_Phone" layoutX="15.0" layoutY="188.0" />
+                        <Label layoutX="15.0" layoutY="172.0" text="Phone:" />
+                        <TextField fx:id="TxFldEdit_Visited" layoutX="15.0" layoutY="229.0" />
+                        <Label layoutX="15.0" layoutY="213.0" text="Visited count:" />
+                        <Label layoutX="14.0" layoutY="6.0" text="Patient:" />
+                        <Button fx:id="EditButton" layoutX="70.0" layoutY="263.0" mnemonicParsing="false" onAction="#EditButtonAction" text="Edit" />
+                        <ComboBox fx:id="EditComboBox" layoutX="15.0" layoutY="23.0" onAction="#EditComboBoxAction" prefWidth="150.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Delete">
+              <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="308.0" prefWidth="221.0">
+                      <children>
+                        <Button layoutX="64.0" layoutY="65.0" mnemonicParsing="false" onAction="#DeleteButtonAction" text="Delete" />
+                        <Label layoutX="14.0" layoutY="14.0" text="Patient:" />
+                        <ComboBox fx:id="DeleteComboBox" layoutX="15.0" layoutY="31.0" prefWidth="150.0" />
+                      </children></AnchorPane>
+              </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <TitledPane animated="false" layoutX="534.0" layoutY="355.0" prefHeight="124.0" prefWidth="179.0" text="Query">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="82.0" prefWidth="177.0">
+               <children>
+                  <Button layoutX="51.0" layoutY="39.0" mnemonicParsing="false" onAction="#NotVisited" prefHeight="25.0" prefWidth="75.0" text="Visited = 0" />
+                  <Button layoutX="42.0" layoutY="70.0" mnemonicParsing="false" onAction="#BirthdayToday" text="Birthday today" />
+                  <Button layoutX="51.0" layoutY="7.0" mnemonicParsing="false" onAction="#UpdateTable" prefHeight="25.0" prefWidth="75.0" text="All" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TitledPane animated="false" layoutX="290.0" layoutY="406.0" prefHeight="73.0" prefWidth="235.0" text="Sort">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button layoutX="3.0" layoutY="11.0" mnemonicParsing="false" onAction="#SortButtonClick" text="By visited count" />
+                  <Button layoutX="113.0" layoutY="11.0" mnemonicParsing="false" onAction="#Sort2ButtonClick" text="By name&amp;surname" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TitledPane animated="false" layoutX="14.0" layoutY="406.0" prefHeight="73.0" prefWidth="272.0" text="Search">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="TxFldSearch" layoutX="112.0" layoutY="14.0" prefHeight="25.0" prefWidth="99.0" />
+                  <Label layoutX="85.0" layoutY="18.0" text="Key:" />
+                  <Button fx:id="SearchButton" layoutX="214.0" layoutY="14.0" mnemonicParsing="false" onAction="#SearchButtonClick" text="Search" />
+                  <RadioButton fx:id="RdBtnSurname" layoutX="3.0" layoutY="6.0" mnemonicParsing="false" selected="true" text="Surname">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Group1" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="RdBtnName" layoutX="3.0" layoutY="27.0" mnemonicParsing="false" text="Name" toggleGroup="$Group1" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+   </children>
+</AnchorPane>
